@@ -77,9 +77,6 @@ const Typing = () => {
 
   useEffect(() => {
 
-    // if (loading) { return };
-    // if (!user) { return navigate("/") };
-
     dispatch(startPractice());
     setCurrentKey(getRandomKey());
     setRunTimer(true);
