@@ -81,7 +81,7 @@ const Typing = () => {
     let timerId;
     //check the timer
     if (runTimer) {     
-      setCountDown(60 * .15);   
+      setCountDown(60 * 5);   
       timerId = setInterval(() => {
         setCountDown((countDown) => countDown - 1); 
         dispatch(finishPractice());
