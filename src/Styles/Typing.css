@@ -163,3 +163,114 @@ h1{
     padding: 15px;
     background-color: #a50241;;
   }
+
+
+  /* navbar Css */
+
+  #navbar {
+    /* margin: 2px 15px 2px 5px; */
+    padding: 0px 35px 0px 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:180px;
+    background: url("../typingBack1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.logoDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo{
+    height: 45px;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+#buttonLogo{
+    background-color: transparent;
+    padding: 0;
+}
+
+.logout{
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color:#a50241;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+  
+  h1{
+    font-size: 40px;
+}
+.modal{
+  width: 350px;
+  left: 30%; 
+}
+
+}
+
+@media only screen and (max-width: 500px) and (min-width: 200px){
+  
+  #navbar{
+    padding: 0px 10px 0px 10px;
+    gap: 120px;
+  }
+
+  h1{
+    font-size: 40px;
+}
+
+.modal{
+  width: 300px;
+  left: 15%;
+}
+
+.modal-title{
+  font-size: 20px;
+}
+
+.modal-desc > p {
+  font-size: 18px;
+}
+
+.primary-button{
+    padding: 8px;
+    width: 80px;
+    font-size: 15px;
+}
+
+.secondary-button{
+  padding: 8px;
+    width: 80px;
+    font-size: 15px;
+}
+}
+
+
+
+@media only screen and (max-width: 1200px) and (min-width: 800px) {
+  
+  h1{
+    font-size: 40px;
+}
+.modal{
+  width: 350px;
+  left: 30%; 
+}
+
+}

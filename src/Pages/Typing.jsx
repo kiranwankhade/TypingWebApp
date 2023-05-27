@@ -9,8 +9,6 @@ import { auth, logout } from "../firebase";
 
 import "../Styles/Typing.css"
 
-import "../Styles/Navbar.css"
-
 import logo from "../logo.png"
 
 const Typing = () => {
@@ -83,7 +81,7 @@ const Typing = () => {
     let timerId;
     //check the timer
     if (runTimer) {     
-      setCountDown(60 * 5);   
+      setCountDown(60 * .15);   
       timerId = setInterval(() => {
         setCountDown((countDown) => countDown - 1); 
         dispatch(finishPractice());
@@ -226,6 +224,7 @@ const Typing = () => {
           show={showModal}
           onHide={handleClose}
           renderBackdrop={renderBackdrop}
+          center
         >
           <div>
             <div className="modal-header">
