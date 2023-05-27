@@ -1,0 +1,165 @@
+#main {
+    /* background: url("https://images.pexels.com/photos/16274387/pexels-photo-16274387/free-photo-of-wood-garden-leaf-tree.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
+    background-image: url("../typingBack1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 50px;
+}
+
+h1{
+    margin: 0;
+    padding: 10px;
+    color:#29113a;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+#inputType > p{
+    font-size: 30px;
+    color: #a50241;
+    font-weight: bold;
+}
+
+#inputType > p >span{
+    font-size: 30px;
+    color: #29113a;
+    font-weight: bold;
+}
+
+#inputType > input{
+    padding: 10px;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #3b7384;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; 
+}
+
+.timerDiv{
+    font-size: 30px;
+    color: #a50241;
+    font-weight: bold;
+}
+
+.timerDiv > span{
+    font-size: 30px;
+    color: #29113a;
+    font-weight: bold;
+}
+
+.correctDiv {
+    font-size: 30px;
+    color: #29113a;
+    font-weight: bold;
+}
+
+#right{
+    color: green;
+}
+
+#wrong{
+    color: red;
+}
+
+
+.modal {
+    width: 450px;
+    margin: auto;
+    position: fixed;
+    z-index: 1040;
+    top: 30%;
+    left: 32%;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .backdrop {
+    position: fixed;
+    z-index: 1040;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.5;
+  }
+  
+  .modal-title {
+    font-weight: 500;
+    font-size: 1.85rem;
+    color: #a50241;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-desc,
+  .modal-header,
+  .modal-footer {
+    padding: 12px;
+  }
+
+  .modal-desc > p{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #29113a;
+  }
+
+  .modal-desc > p >span{
+    color: #a50241;
+  }
+  
+  .close-button {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    border: none;
+    background-color: white;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .secondary-button {
+    color: #fff;
+    width: 100px;
+    padding: 15px;
+    background-color: #6c757d;
+  }
+  
+  .primary-button {
+    color: #fff;
+    width: 100px;
+    padding: 15px;
+    background-color: #a50241;;
+  }
