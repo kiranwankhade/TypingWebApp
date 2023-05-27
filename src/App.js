@@ -1,11 +1,11 @@
 
 import './App.css';
-import Typing from './Pages/Typing';
+import AllRoutes from './Routes/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-     <Typing/>
+     <AllRoutes/>
     </div>
   );
 }

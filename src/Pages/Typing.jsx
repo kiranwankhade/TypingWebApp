@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { startPractice, finishPractice, updateTypedKey, calculateAccuracy } from '../Redux/action';
-import { Modal } from 'react-overlays'
+import { Modal } from 'react-overlays';
+
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import { auth, logout } from "../firebase";
+
 import "../Styles/Typing.css"
 
+import "../Styles/Navbar.css"
+
+import logo from "../logo.png"
+
 const Typing = () => {
+
+  //getting user from firebase Auth
+  const [user] = useAuthState(auth);
+  console.log('user:', user)
+
+  const navigate = useNavigate();
+
+
   //dispatch function 
   const dispatch = useDispatch();
 
@@ -59,12 +76,17 @@ const Typing = () => {
     };
 
   useEffect(() => {
+
+    // if (loading) { return };
+    // if (!user) { return navigate("/") };
+
     dispatch(startPractice());
     setCurrentKey(getRandomKey());
     setRunTimer(true);
     let timerId;
+    //check the timer
     if (runTimer) {     
-      setCountDown(60 * 5);   
+      setCountDown(60 * .15);   
       timerId = setInterval(() => {
         setCountDown((countDown) => countDown - 1); 
         dispatch(finishPractice());
@@ -158,10 +180,34 @@ const Typing = () => {
     // return result;
   };
 
+  const handleLogin = () => {
+      navigate("/login")
+  }
   
 
   return (
     <>
+      <div id='navbar'>
+        <button id='buttonLogo' onClick={()=>{
+          navigate("/")
+        }}>
+          <img className='logo' src={logo} alt="logo" />
+        </button>
+        {
+          user ?
+           <div className='logoDiv'>
+           <div>
+              <img className='logo' src={user?.photoURL} alt="profile" />
+            </div>
+            <button className='logout' onClick={logout}>Logout</button>
+            </div> : <>
+          <button className='logout' onClick={handleLogin}>
+            Login
+          </button>
+          </>
+        }
+       
+      </div>
       <div id='main'>
         <h1>❀  Touch Typing Practice ❀</h1>
         <div id='inputType'>
@@ -194,7 +240,7 @@ const Typing = () => {
               </div>
             </div>
             <div className="modal-desc">
-                <p>You have typed over <span>{countKeys}</span> keys in 5 min</p>
+                <p>{user ? `${user?.displayName} You `: "You"} have typed over <span>{countKeys}</span> keys in 5 min</p>
                 <p>Accuracy : <span>{modalAccuracy}</span></p>
             </div>
             <div className="modal-footer">
