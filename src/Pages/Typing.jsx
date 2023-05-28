@@ -118,18 +118,18 @@ const Typing = () => {
   const seconds = String(countDown % 60).padStart(2, 0);
   const minutes = String(Math.floor(countDown / 60)).padStart(2, 0);
 
-
   //After Change in input
   const handleKeyPress = (event) => {
     
     const key = event.target.value.toLowerCase();
-
+    const hideDiv = document.getElementById("hideDiv");
     if (key === currentKey) {
-      
+      hideDiv.style.display = "block";
       dispatch(updateTypedKey(key));
       setCurrentKey(getRandomKey());
       setKeyRight(true)
     }else{
+        hideDiv.style.display = "block";
         dispatch(updateTypedKey(key));
         if(key !== ""){
             setKeyRight(false)
@@ -209,8 +209,11 @@ const Typing = () => {
           <p>Type : <span>{currentKey}</span></p>
           <input type="text" placeholder='Write word here' onChange={handleKeyPress} autoFocus />
         </div>
+        <div id='hideDiv'>
+        {keyRight ? <p id='right'>Typed Key is Right</p> : <p id='wrong'>Typed Key is Wrong</p> }
+        </div>
 
-        {keyRight ? null : <p id='wrong'>Typed Key is Wrong</p> }
+        {/* {keyRight ? <p id='right'>Typed Key is Right</p> : <p id='wrong'>Typed Key is Wrong</p> } */}
         
         <div className='timerDiv'>Timer: <span>{minutes}:{seconds}</span></div>
         {/* <div  className='timerDiv'>

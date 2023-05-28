@@ -63,6 +63,10 @@ h1{
     font-weight: bold;
 }
 
+#hideDiv {
+  display: none;
+}
+
 #right{
     color: green;
 }
